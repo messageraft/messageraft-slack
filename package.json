@@ -1,0 +1,61 @@
+{
+  "name": "@messageraft/slack",
+  "version": "0.0.1",
+  "description": "Slack provider package for Messageraft server",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "messageraft",
+    "slack"
+  ],
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "homepage": "https://messageraft.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/messageraft/messageraft-slack.git"
+  },
+  "bugs": "https://github.com/messageraft/messageraft-slack/issues",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "author": "Messageraft",
+  "main": "dist/main/index.js",
+  "module": "dist/module/index.js",
+  "types": "dist/main/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "build": "run-s clean format build:*",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.module.json",
+    "types-generate": "dts-bundle-generator --umd-module-name 'messageraft' -o dist/messageraft-sendgrid.d.ts src/index.ts",
+    "tsc:watch": "tsc -w"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.4",
+    "dts-bundle-generator": "^5.9.0",
+    "husky": "^7.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "@messageraft/common": "^0.0.2",
+    "@slack/web-api": "^6.4.0"
+  }
+}
