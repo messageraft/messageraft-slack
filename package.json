@@ -36,7 +36,8 @@
     "build:main": "tsc -p tsconfig.json",
     "build:module": "tsc -p tsconfig.module.json",
     "types-generate": "dts-bundle-generator --umd-module-name 'messageraft' -o dist/messageraft-sendgrid.d.ts src/index.ts",
-    "tsc:watch": "tsc -w"
+    "tsc:watch": "tsc -w",
+    "prepack": "yarn build"
   },
   "husky": {
     "hooks": {
@@ -55,7 +56,7 @@
     "typescript": "^4.4.2"
   },
   "dependencies": {
-    "@messageraft/common": "^0.0.2",
+    "@messageraft/common": "^0.0.3",
     "@slack/web-api": "^6.4.0"
   }
 }
