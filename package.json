@@ -1,6 +1,6 @@
 {
   "name": "@messageraft/slack",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Slack provider package for Messageraft server",
   "keywords": [
     "javascript",
@@ -56,7 +56,7 @@
     "typescript": "^4.4.2"
   },
   "dependencies": {
-    "@messageraft/common": "^0.0.3",
+    "@messageraft/common": "^0.0.4",
     "@slack/web-api": "^6.4.0"
   }
 }
